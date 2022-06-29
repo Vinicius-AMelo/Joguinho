@@ -14,7 +14,6 @@ function ContextCanvas(props) {
     setCanvas: (direction, move, walker) => {
       const nextPosition = handleMove(direction, move)
       const isValidMoviment = changeCanvas(nextPosition, walker)
-      console.log(isValidMoviment.valid)
       if (isValidMoviment.valid) {
         setCanvas2((prevState) => {
           const newCanvas = [...prevState.canvas]
@@ -37,7 +36,11 @@ function ContextCanvas(props) {
     },
   })
 
-  return <CanvasContext.Provider value={updatedCanvas}>{props.children}</CanvasContext.Provider>
+  return (
+    <CanvasContext.Provider value={updatedCanvas}>
+      {props.children}
+    </CanvasContext.Provider>
+  )
 }
 
 export default ContextCanvas

@@ -42,7 +42,10 @@ export function changeCanvas(nextPosition, walker) {
         canvasValue === EPixels.MD ||
         canvasValue === EPixels.CH ||
         canvasValue === EPixels.TR,
-      dead: canvasValue === EPixels.DM || canvasValue === EPixels.MD || canvasValue === EPixels.TR,
+      dead:
+        canvasValue === EPixels.DM ||
+        canvasValue === EPixels.MD ||
+        canvasValue === EPixels.TR,
       chest: canvasValue === EPixels.CH,
     }
   }
@@ -50,10 +53,13 @@ export function changeCanvas(nextPosition, walker) {
   function getEnemyValidMoves(canvasValue) {
     return {
       valid: canvasValue === EPixels.FL || canvasValue === EPixels.HR,
-      dead: false,
+      dead: canvasValue === EPixels.HR,
       chest: false,
     }
   }
-  const result = walker === EPixels.HR ? getHeroValidMoves(canvasValue) : getEnemyValidMoves(canvasValue)
+  const result =
+    walker === EPixels.HR
+      ? getHeroValidMoves(canvasValue)
+      : getEnemyValidMoves(canvasValue)
   return result
 }

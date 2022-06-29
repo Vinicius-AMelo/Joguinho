@@ -15,6 +15,13 @@ function useEnemyMoviment({ initialPosition }) {
     if (tora.isValidMoviment.valid) {
       setMove(tora.nextPosition)
     }
+    if (tora.isValidMoviment.dead) {
+      setTimeout(() => {
+        // eslint-disable-next-line no-alert
+        alert('Morreu Otário')
+      })
+      window.location.reload()
+    }
   }, 2000)
 
   return { move }

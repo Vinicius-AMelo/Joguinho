@@ -15,6 +15,13 @@ function useHeroMoviment({ initialPosition }) {
     if (tora.isValidMoviment.valid) {
       setMove(tora.nextPosition)
     }
+    if (tora.isValidMoviment.dead) {
+      setTimeout(() => {
+        // eslint-disable-next-line no-alert
+        alert('Morreu Otário')
+      }, 1)
+      window.location.reload()
+    }
   })
 
   return { move }
