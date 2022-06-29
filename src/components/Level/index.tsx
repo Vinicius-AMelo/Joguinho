@@ -42,7 +42,7 @@ function Level() {
   return (
     <div className="mapa">
       {tiles}
-      {/* <Debbuger /> */}
+      <Debbuger />
     </div>
   )
 }

@@ -23,7 +23,15 @@ function Debbuger() {
   const updatedCanvas = useContext(CanvasContext)
   const tiles = getCanvasMap(updatedCanvas.canvas)
   console.log(2)
-  return <div>{tiles}</div>
+  return (
+    <div
+      style={{
+        display: 'none',
+      }}
+    >
+      {tiles}
+    </div>
+  )
 }
 
 export default Debbuger
