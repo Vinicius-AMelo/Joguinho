@@ -1,11 +1,10 @@
 import React from 'react'
 
 import { TILE_SIZE } from '../../config/constants'
-import useHeroMoviment from '../../config/useHeroMoviment'
+import useEnemyMoviment from '../../config/useEnemyMoviment'
 
 function Demon(initialPosition) {
-  const { move } = useHeroMoviment(initialPosition)
-  console.log(move)
+  const { move } = useEnemyMoviment(initialPosition)
 
   return (
     <div>
