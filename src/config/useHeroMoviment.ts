@@ -1,17 +1,19 @@
 import useEventListener from '@use-it/event-listener'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
-import { changeCanvas } from './canvas'
-import handleMove from './handleMove'
+import { CanvasContext } from '../store/CanvasContext'
+import { EPixels } from './constants'
 
 function useHeroMoviment({ initialPosition }) {
+  const updatedCanvas = useContext(CanvasContext)
+
   const [move, setMove] = useState(initialPosition)
 
   useEventListener('keydown', (event: KeyboardEvent) => {
-    const nextPosition = handleMove(event.key, move)
-    const isValidMoviment = changeCanvas(nextPosition)
-    if (isValidMoviment) {
-      setMove(nextPosition)
+    const tora = updatedCanvas.setCanvas(event.key, move, EPixels.HR)
+    // console.log(tora.nextPosition)
+    if (tora.isValidMoviment.valid) {
+      setMove(tora.nextPosition)
     }
   })
 

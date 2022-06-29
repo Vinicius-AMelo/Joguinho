@@ -1,8 +1,11 @@
 import { canvas } from '../../config/canvas'
 import { EPixels } from '../../config/constants'
+import Chest from '../Chest'
 import Debbuger from '../Debbuger/Debbuger'
 import Demon from '../Demon'
 import Hero from '../Hero'
+import MiniDemon from '../MiniDemon'
+import Trap from '../Trap'
 
 function getCanvasMap() {
   const tilesArray = []
@@ -18,6 +21,15 @@ function getCanvasMap() {
       }
       if (content === EPixels.DM) {
         tilesArray.push(<Demon key={key} initialPosition={position} />)
+      }
+      if (content === EPixels.TR) {
+        tilesArray.push(<Trap key={key} initialPosition={position} />)
+      }
+      if (content === EPixels.MD) {
+        tilesArray.push(<MiniDemon key={key} initialPosition={position} />)
+      }
+      if (content === EPixels.CH) {
+        tilesArray.push(<Chest key={key} initialPosition={position} />)
       }
     }
   }

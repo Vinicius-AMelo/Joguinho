@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable default-case */
 import React from 'react'
 
 import { TILE_SIZE } from '../../../config/constants'
 
-function Tile({ content, position }: any) {
+function Tile({ content, position }) {
   function getTileColor() {
     switch (content) {
       case 0:

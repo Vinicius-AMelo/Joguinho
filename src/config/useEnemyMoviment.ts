@@ -1,19 +1,19 @@
-import { useState } from 'react'
+import useInterval from '@use-it/interval'
+import { useContext, useState } from 'react'
 
-import { changeCanvas } from './canvas'
-import { EWalker } from './constants'
-import handleMove from './handleMove'
+import { CanvasContext } from '../store/CanvasContext'
+import { EPixels, EWalker } from './constants'
 
 function useEnemyMoviment({ initialPosition }) {
   const [move, setMove] = useState(initialPosition)
+  const updatedCanvas = useContext(CanvasContext)
 
-  setTimeout(() => {
+  useInterval(() => {
     const random = Math.floor(Math.random() * 3.99)
     const array = Object.values(EWalker)
-    const nextMoviment = handleMove(array[random], move)
-    const isValidMoviment = changeCanvas(nextMoviment)
-    if (isValidMoviment) {
-      setMove(nextMoviment)
+    const tora = updatedCanvas.setCanvas(array[random], move, EPixels.DM)
+    if (tora.isValidMoviment.valid) {
+      setMove(tora.nextPosition)
     }
   }, 2000)
 

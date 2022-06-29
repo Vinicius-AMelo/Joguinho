@@ -31,12 +31,29 @@ export const canvas = [
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL],
 ]
 
-export function changeCanvas(nextPosition) {
+export function changeCanvas(nextPosition, walker) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
 
-  if (canvasValue === EPixels.WL) {
-    return false
+  function getHeroValidMoves(canvasValue) {
+    return {
+      valid:
+        canvasValue === EPixels.FL ||
+        canvasValue === EPixels.DM ||
+        canvasValue === EPixels.MD ||
+        canvasValue === EPixels.CH ||
+        canvasValue === EPixels.TR,
+      dead: canvasValue === EPixels.DM || canvasValue === EPixels.MD || canvasValue === EPixels.TR,
+      chest: canvasValue === EPixels.CH,
+    }
   }
 
-  return true
+  function getEnemyValidMoves(canvasValue) {
+    return {
+      valid: canvasValue === EPixels.FL || canvasValue === EPixels.HR,
+      dead: false,
+      chest: false,
+    }
+  }
+  const result = walker === EPixels.HR ? getHeroValidMoves(canvasValue) : getEnemyValidMoves(canvasValue)
+  return result
 }
