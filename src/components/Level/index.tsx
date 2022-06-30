@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { canvas } from '../../config/canvas'
 import { EPixels, GAME_SIZE } from '../../config/configs'
 import Chest from '../Chest'
@@ -6,6 +7,7 @@ import Demon from '../Demon'
 import Hero from '../Hero'
 import MiniDemon from '../MiniDemon'
 import Trap from '../Trap'
+import '../../App.css'
 
 function getCanvasMap() {
   const tilesArray = []
@@ -57,6 +59,7 @@ const tiles = getCanvasMap()
 function Level() {
   return (
     <div
+      className="mapa"
       style={{
         backgroundImage: 'url(./assets/images/level4.gif)',
         width: GAME_SIZE,

@@ -2,6 +2,8 @@ export const GAME_SIZE = 960
 
 export const TILE_SIZE = 48
 
+export const CAP_OFFSET = 15
+
 export enum EWalker {
   LEFT = 'ArrowLeft',
   RIGHT = 'ArrowRight',
