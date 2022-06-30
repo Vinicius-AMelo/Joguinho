@@ -70,7 +70,7 @@ export function changeCanvas(nextPosition, walker) {
   }
   function getDemonValidMoves(canvasValue) {
     return {
-      valid: (canvasValue === EPixels.FL && canvasValueDemon === EPixels.FL) || (canvasValue === EPixels.HR && canvasValueDemon === EPixels.HR) || (canvasValue === EPixels.DM && canvasValueDemon === EPixels.FL),
+      valid: (canvasValue === EPixels.FL && canvasValueDemon === EPixels.FL) || (canvasValue === EPixels.HR && canvasValueDemon === EPixels.HR) || (canvasValue === EPixels.DM && canvasValueDemon === EPixels.FL) || (canvasValue === EPixels.FL && canvasValueDemon === EPixels.DM),
       dead: canvasValue === EPixels.HR,
       chest: false,
     }
