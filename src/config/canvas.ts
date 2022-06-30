@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-nested-ternary */
 import { EPixels } from './configs'
 
 const { WL } = EPixels
@@ -41,8 +39,12 @@ export function changeCanvas(nextPosition, walker) {
   let canvasValueDemon2
   let canvasValueDemon3
 
-  if ((nextPosition.y < 19 && nextPosition.y > 0) && (nextPosition.x < 19 && nextPosition.y > 0)) {
-
+  if (
+    nextPosition.y < 19 &&
+    nextPosition.y > 0 &&
+    nextPosition.x < 19 &&
+    nextPosition.y > 0
+  ) {
     canvasValueDemon1 = canvas[nextPosition.y + 1][nextPosition.x]
     canvasValueDemon2 = canvas[nextPosition.y][nextPosition.x + 1]
     canvasValueDemon3 = canvas[nextPosition.y + 1][nextPosition.x + 1]
@@ -75,48 +77,75 @@ export function changeCanvas(nextPosition, walker) {
   function getDemonValidMoves(canvasValue) {
     return {
       valid:
-        (canvasValue === EPixels.HR && canvasValueDemon1 === EPixels.FL) // LEFT HERO
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.DM) // LEFT HERO
-        || (canvasValue === EPixels.FL && canvasValueDemon1 === EPixels.HR) // LEFT HERO
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.DM) // LEFT HERO
+        (canvasValue === EPixels.HR &&
+          canvasValueDemon1 === EPixels.FL && // LEFT HERO
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.DM) || // LEFT HERO
+        (canvasValue === EPixels.FL &&
+          canvasValueDemon1 === EPixels.HR && // LEFT HERO
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.DM) || // LEFT HERO
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.DM && // RIGHT HERO
+          canvasValueDemon2 === EPixels.HR &&
+          canvasValueDemon3 === EPixels.FL) || // RIGHT HERO
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.DM && // RIGHT HERO
+          canvasValueDemon2 === EPixels.FL &&
+          canvasValueDemon3 === EPixels.HR) || // RIGHT HERO
+        (canvasValue === EPixels.HR &&
+          canvasValueDemon1 === EPixels.DM && // UP HERO
+          canvasValueDemon2 === EPixels.FL &&
+          canvasValueDemon3 === EPixels.DM) || // UP HERO
+        (canvasValue === EPixels.FL &&
+          canvasValueDemon1 === EPixels.DM && // UP HERO
+          canvasValueDemon2 === EPixels.HR &&
+          canvasValueDemon3 === EPixels.DM) || // UP HERO
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.HR && // DOWN HERO
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.FL) || // DOWN HERO
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.FL && // DOWN HERO
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.HR) || // DOWN HERO
+        (canvasValue === EPixels.FL &&
+          canvasValueDemon1 === EPixels.FL && // LEFT
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.DM) || // LEFT
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.DM && // RIGHT
+          canvasValueDemon2 === EPixels.FL &&
+          canvasValueDemon3 === EPixels.FL) || // RIGHT
+        (canvasValue === EPixels.FL &&
+          canvasValueDemon1 === EPixels.DM && // UP
+          canvasValueDemon2 === EPixels.FL &&
+          canvasValueDemon3 === EPixels.DM) || // UP
+        (canvasValue === EPixels.DM &&
+          canvasValueDemon1 === EPixels.FL && // DOWN
+          canvasValueDemon2 === EPixels.DM &&
+          canvasValueDemon3 === EPixels.FL), // DOWN
 
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.DM) // RIGHT HERO
-        && (canvasValueDemon2 === EPixels.HR && canvasValueDemon3 === EPixels.FL) // RIGHT HERO
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.DM) // RIGHT HERO
-        && (canvasValueDemon2 === EPixels.FL && canvasValueDemon3 === EPixels.HR) // RIGHT HERO
-
-        || (canvasValue === EPixels.HR && canvasValueDemon1 === EPixels.DM) // UP HERO
-        && (canvasValueDemon2 === EPixels.FL && canvasValueDemon3 === EPixels.DM) // UP HERO
-        || (canvasValue === EPixels.FL && canvasValueDemon1 === EPixels.DM) // UP HERO
-        && (canvasValueDemon2 === EPixels.HR && canvasValueDemon3 === EPixels.DM) // UP HERO
-
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.HR) // DOWN HERO
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.FL) // DOWN HERO
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.FL) // DOWN HERO
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.HR) // DOWN HERO
-
-        || (canvasValue === EPixels.FL && canvasValueDemon1 === EPixels.FL) // LEFT
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.DM) // LEFT
-
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.DM) // RIGHT
-        && (canvasValueDemon2 === EPixels.FL && canvasValueDemon3 === EPixels.FL) // RIGHT
-
-        || (canvasValue === EPixels.FL && canvasValueDemon1 === EPixels.DM) // UP
-        && (canvasValueDemon2 === EPixels.FL && canvasValueDemon3 === EPixels.DM) // UP
-
-        || (canvasValue === EPixels.DM && canvasValueDemon1 === EPixels.FL) // DOWN
-        && (canvasValueDemon2 === EPixels.DM && canvasValueDemon3 === EPixels.FL), // DOWN
-
-      dead: (canvasValue === EPixels.HR || canvasValueDemon1 === EPixels.HR)
-        || (canvasValueDemon2 === EPixels.HR || canvasValueDemon3 === EPixels.HR),
+      dead:
+        canvasValue === EPixels.HR ||
+        canvasValueDemon1 === EPixels.HR ||
+        canvasValueDemon2 === EPixels.HR ||
+        canvasValueDemon3 === EPixels.HR,
       chest: false,
     }
   }
-  const result =
-    walker === EPixels.HR
-      ? getHeroValidMoves(canvasValue)
-      : walker === EPixels.MD
-        ? getMiniDemonValidMoves(canvasValue)
-        : getDemonValidMoves(canvasValue)
+
+  let result
+  if (walker === EPixels.HR) {
+    result = getHeroValidMoves(canvasValue)
+  }
+  if (walker === EPixels.MD) {
+    result = getMiniDemonValidMoves(canvasValue)
+    return result
+  }
+  if (walker === EPixels.DM) {
+    result = getDemonValidMoves(canvasValue)
+    return result
+  }
   return result
 }

@@ -16,7 +16,7 @@ function Demon(initialPosition) {
           left: TILE_SIZE * move.x,
           width: TILE_SIZE * 2,
           height: TILE_SIZE * 2,
-          backgroundImage: 'url(./assets/images/orc.png)',
+          // backgroundImage: 'url(./assets/images/orc.png)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '0 -100px',
           animation: 'diaboG 1s steps(4) infinite',

@@ -16,7 +16,7 @@ function MiniDemon(initialPosition) {
           left: TILE_SIZE * move.x,
           width: TILE_SIZE,
           height: TILE_SIZE,
-          backgroundImage: 'url(./assets/images/mini-orc.png)',
+          // backgroundImage: 'url(./assets/images/mini-orc.png)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '0 -50px',
           animation: 'diabo 1s steps(4) infinite',

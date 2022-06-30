@@ -8,11 +8,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-/* .mapa{
+.mapa{
   background-image: url('/public/assets/images/level4.gif');
-  width: 960px;
-  height: 960px;
-  position: relative;
 }
 
 .hero{
@@ -25,7 +22,7 @@
 
 .md{
   background-image: url('/public/assets/images/mini-orc.png');
-} */
+}
 
 @keyframes diabo {
     from{

@@ -16,7 +16,7 @@ function Hero(initialPosition) {
           left: TILE_SIZE * move.x,
           width: TILE_SIZE,
           height: TILE_SIZE + CAP_OFFSET,
-          backgroundImage: 'url(./assets/images/wizzard2.png)',
+          // backgroundImage: 'url(./assets/images/wizzard2.png)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '0 -36px',
           animation: 'diabo 1s steps(4) infinite',

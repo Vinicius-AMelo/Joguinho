@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { canvas } from '../../config/canvas'
 import { EPixels, GAME_SIZE } from '../../config/configs'
 import Chest from '../Chest'
@@ -61,7 +60,7 @@ function Level() {
     <div
       className="mapa"
       style={{
-        backgroundImage: 'url(./assets/images/level4.gif)',
+        // backgroundImage: 'url(./assets/images/level4.gif)',
         width: GAME_SIZE,
         height: GAME_SIZE,
         position: 'relative',
