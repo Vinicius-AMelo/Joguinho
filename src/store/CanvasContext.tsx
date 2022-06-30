@@ -14,7 +14,7 @@ function ContextCanvas(props) {
     setCanvas: (direction, move, walker) => {
       const nextPosition = handleMove(direction, move)
       const isValidMoviment = changeCanvas(nextPosition, walker)
-      if (isValidMoviment.valid) {
+      if (isValidMoviment.valid && (walker === EPixels.MD || walker === EPixels.HR)) {
         setCanvas2((prevState) => {
           const newCanvas = [...prevState.canvas]
           const currentValue = newCanvas[move.y][move.x]
@@ -22,6 +22,27 @@ function ContextCanvas(props) {
           newCanvas[move.y][move.x] = EPixels.FL
 
           newCanvas[nextPosition.y][nextPosition.x] = currentValue
+
+          return {
+            canvas: newCanvas,
+            setCanvas: prevState.setCanvas,
+          }
+        })
+      }
+      if (isValidMoviment.valid && walker === EPixels.DM) {
+        setCanvas2((prevState) => {
+          const newCanvas = [...prevState.canvas]
+          // const currentValue = newCanvas[move.y][move.x]
+
+          newCanvas[move.y][move.x] = EPixels.FL
+          newCanvas[move.y + 1][move.x] = EPixels.FL
+          newCanvas[move.y][move.x + 1] = EPixels.FL
+          newCanvas[move.y + 1][move.x + 1] = EPixels.FL
+
+          newCanvas[nextPosition.y][nextPosition.x] = walker
+          newCanvas[nextPosition.y + 1][nextPosition.x] = walker
+          newCanvas[nextPosition.y][nextPosition.x + 1] = walker
+          newCanvas[nextPosition.y + 1][nextPosition.x + 1] = walker
 
           return {
             canvas: newCanvas,

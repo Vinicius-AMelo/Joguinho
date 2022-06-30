@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { TILE_SIZE } from '../../config/constants'
-import useEnemyMoviment from '../../config/useEnemyMoviment'
+import useDemonMoviment from '../../config/useDemonMoviment'
 
 function Demon(initialPosition) {
-  const { move } = useEnemyMoviment(initialPosition)
+  const { move } = useDemonMoviment(initialPosition)
 
   return (
     <div>
@@ -14,10 +14,12 @@ function Demon(initialPosition) {
           position: 'absolute',
           top: TILE_SIZE * move.y,
           left: TILE_SIZE * move.x,
-          width: TILE_SIZE,
-          height: TILE_SIZE,
+          width: TILE_SIZE * 2,
+          height: TILE_SIZE * 2,
           backgroundImage: 'url(./assets/images/demon.png)',
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: '0 -30px',
+          animation: 'diaboG 1s steps(4) infinite',
         }}
       />
       <img src="../../" alt="" />

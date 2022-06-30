@@ -13,9 +13,11 @@ function Trap({ initialPosition }) {
           top: TILE_SIZE * initialPosition.y,
           left: TILE_SIZE * initialPosition.x,
           width: TILE_SIZE,
-          height: TILE_SIZE,
+          height: TILE_SIZE * 2,
           backgroundImage: 'url(./assets/images/trap.png)',
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: '0 0',
+          animation: 'trap 2s steps(4) infinite easy-in',
         }}
       />
       <img src="../../" alt="" />

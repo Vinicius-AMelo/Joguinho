@@ -11,7 +11,7 @@ function useHeroMoviment({ initialPosition }) {
 
   useEventListener('keydown', (event: KeyboardEvent) => {
     const tora = updatedCanvas.setCanvas(event.key, move, EPixels.HR)
-    // console.log(tora.nextPosition)
+
     if (tora.isValidMoviment.valid) {
       setMove(tora.nextPosition)
     }

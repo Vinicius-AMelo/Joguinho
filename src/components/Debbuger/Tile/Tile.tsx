@@ -21,6 +21,8 @@ function Tile({ content, position }) {
         return 'cyan'
       case 6:
         return 'magenta'
+      case 7:
+        return 'orangered'
     }
     return null
   }
@@ -28,7 +30,7 @@ function Tile({ content, position }) {
   return (
     <div
       style={{
-        border: `2px solid ${color}`,
+        border: `3px solid ${color}`,
         color,
         width: TILE_SIZE,
         height: TILE_SIZE,

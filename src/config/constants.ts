@@ -1,4 +1,6 @@
-export const TILE_SIZE = 35
+export const GAME_SIZE = 960
+
+export const TILE_SIZE = 48
 
 export enum EWalker {
   LEFT = 'ArrowLeft',
@@ -15,4 +17,5 @@ export enum EPixels {
   DM = 4,
   CH = 5,
   HR = 6,
+  HL = 7,
 }

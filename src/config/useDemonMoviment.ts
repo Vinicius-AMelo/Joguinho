@@ -4,7 +4,7 @@ import { useContext, useState } from 'react'
 import { CanvasContext } from '../store/CanvasContext'
 import { EPixels, EWalker } from './constants'
 
-function useEnemyMoviment({ initialPosition }) {
+function useDemonMoviment({ initialPosition }) {
   const [move, setMove] = useState(initialPosition)
   const updatedCanvas = useContext(CanvasContext)
 
@@ -27,4 +27,4 @@ function useEnemyMoviment({ initialPosition }) {
   return { move }
 }
 
-export default useEnemyMoviment
+export default useDemonMoviment

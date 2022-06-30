@@ -1,4 +1,5 @@
-import { useContext } from 'react'
+import useEventListener from '@use-it/event-listener'
+import { useContext, useState } from 'react'
 
 import { CanvasContext } from '../../store/CanvasContext'
 import Tile from './Tile/Tile'
@@ -20,13 +21,23 @@ function getCanvasMap(canvas) {
 }
 
 function Debbuger() {
+  const [debug, setDebug] = useState(false)
+
   const updatedCanvas = useContext(CanvasContext)
   const tiles = getCanvasMap(updatedCanvas.canvas)
-  console.log(2)
+
+  useEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key === 'F8') {
+      setDebug(!debug)
+    }
+  })
+
+  const display = debug ? 'block' : 'none'
+
   return (
     <div
       style={{
-        display: 'none',
+        display,
       }}
     >
       {tiles}
