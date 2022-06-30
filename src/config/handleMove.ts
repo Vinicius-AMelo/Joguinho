@@ -1,4 +1,4 @@
-import { EWalker } from './constants'
+import { EWalker } from './configs'
 
 function handleMove(direction, move) {
   if (direction === EWalker.LEFT) {

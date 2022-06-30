@@ -3,7 +3,7 @@
 import React, { createContext, useState } from 'react'
 
 import { canvas, changeCanvas } from '../config/canvas'
-import { EPixels } from '../config/constants'
+import { EPixels } from '../config/configs'
 import handleMove from '../config/handleMove'
 
 export const CanvasContext = createContext(null)
@@ -53,6 +53,7 @@ function ContextCanvas(props) {
       return {
         nextPosition,
         isValidMoviment,
+        direction,
       }
     },
   })

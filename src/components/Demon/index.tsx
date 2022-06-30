@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TILE_SIZE } from '../../config/constants'
+import { TILE_SIZE } from '../../config/configs'
 import useDemonMoviment from '../../config/useDemonMoviment'
 
 function Demon(initialPosition) {

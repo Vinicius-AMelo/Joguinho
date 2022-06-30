@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TILE_SIZE } from '../../config/constants'
+import { TILE_SIZE } from '../../config/configs'
 import useHeroMoviment from '../../config/useHeroMoviment'
 
 function Hero(initialPosition) {

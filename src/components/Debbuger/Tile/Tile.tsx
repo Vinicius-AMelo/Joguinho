@@ -2,15 +2,15 @@
 /* eslint-disable default-case */
 import React from 'react'
 
-import { TILE_SIZE } from '../../../config/constants'
+import { TILE_SIZE } from '../../../config/configs'
 
 function Tile({ content, position }) {
   function getTileColor() {
     switch (content) {
       case 0:
-        return 'blue'
+        return 'darkgray'
       case 1:
-        return 'yellow'
+        return 'orange'
       case 2:
         return 'greenyellow'
       case 3:
@@ -22,7 +22,7 @@ function Tile({ content, position }) {
       case 6:
         return 'magenta'
       case 7:
-        return 'orangered'
+        return 'yellow'
     }
     return null
   }

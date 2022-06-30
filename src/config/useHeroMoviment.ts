@@ -2,7 +2,7 @@ import useEventListener from '@use-it/event-listener'
 import { useContext, useState } from 'react'
 
 import { CanvasContext } from '../store/CanvasContext'
-import { EPixels } from './constants'
+import { EPixels } from './configs'
 
 function useHeroMoviment({ initialPosition }) {
   const updatedCanvas = useContext(CanvasContext)
@@ -19,7 +19,7 @@ function useHeroMoviment({ initialPosition }) {
       setTimeout(() => {
         // eslint-disable-next-line no-alert
         alert('Morreu Otário')
-      }, 1)
+      })
       window.location.reload()
     }
   })

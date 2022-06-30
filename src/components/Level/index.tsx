@@ -1,5 +1,5 @@
 import { canvas } from '../../config/canvas'
-import { EPixels, GAME_SIZE } from '../../config/constants'
+import { EPixels, GAME_SIZE } from '../../config/configs'
 import Chest from '../Chest'
 import Debbuger from '../Debbuger/Debbuger'
 import Demon from '../Demon'

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-import { TILE_SIZE } from '../../config/constants'
+import { TILE_SIZE } from '../../config/configs'
 
 function Chest({ initialPosition }) {
   return (
