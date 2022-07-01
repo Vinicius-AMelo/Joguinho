@@ -20,8 +20,10 @@ function useHeroMoviment({ initialPosition }) {
         setTimeout(() => {
           // eslint-disable-next-line no-alert
           alert('Morreu Otário')
+        }, 200)
+        setTimeout(() => {
           window.location.reload()
-        }, 100)
+        }, 300)
       }
       if (tora.isValidMoviment.coin) {
         setCount(0)

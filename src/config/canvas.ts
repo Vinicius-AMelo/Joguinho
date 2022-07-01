@@ -55,9 +55,10 @@ export function changeCanvas(nextPosition, walker, currentPosition) {
     return {
       valid:
         canvasValue === EPixels.FL ||
+        canvasValue === EPixels.CO ||
         canvasValue === EPixels.DM ||
         canvasValue === EPixels.MD ||
-        canvasValue === EPixels.CO ||
+        canvasValue === EPixels.HL ||
         canvasValue === EPixels.TR,
       dead:
         canvasValue === EPixels.DM ||
