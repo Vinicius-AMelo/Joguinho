@@ -24,6 +24,10 @@
   background-image: url('/public/assets/images/mini-orc.png');
 }
 
+.trap{
+  background-image: url('/public/assets/images/trap.png');
+}
+
 @keyframes diabo {
     from{
       background-position-x: 0px;
@@ -47,7 +51,7 @@
       background-position-x: 0px;
     }
     to{
-      background-position-x: -139px;
+      background-position-x: -192px;
     }
   }
 
