@@ -27,6 +27,9 @@
 .trap{
   background-image: url('/public/assets/images/trap.png');
 }
+.joca{
+  background-image: url('/public/assets/images/CWB2.png');
+}
 
 @keyframes diabo {
     from{

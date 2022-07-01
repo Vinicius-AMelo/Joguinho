@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CAP_OFFSET, TILE_SIZE } from '../../config/configs'
+import { CAP_OFFSET, GAME_SIZE, TILE_SIZE } from '../../config/configs'
 import useHeroMoviment from '../../config/useHeroMoviment'
 
 function Hero(initialPosition) {
@@ -22,7 +22,17 @@ function Hero(initialPosition) {
           animation: 'diabo 1s steps(4) infinite',
         }}
       />
-      <img src="../../" alt="" />
+      <div
+        className="joca"
+        style={{
+          position: 'absolute',
+          width: GAME_SIZE,
+          height: GAME_SIZE / 48,
+          backgroundRepeat: 'no-repeat',
+          bottom: 40,
+          zIndex: 1,
+        }}
+      />
     </div>
   )
 }
