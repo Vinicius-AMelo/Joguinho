@@ -58,8 +58,6 @@ function ContextCanvas(props: IProps) {
         setCanvas2((prevState) => {
           const newCanvas = [...prevState.canvas]
 
-          newCanvas[move.y][move.x] = EPixels.HR
-
           newCanvas[nextPosition.y][nextPosition.x] = walker
           return {
             canvas: newCanvas,
