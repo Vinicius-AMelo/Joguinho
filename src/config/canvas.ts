@@ -20,20 +20,21 @@ export const canvas = [
   [WL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, MD, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, CO, FL, FL, TR, FL, WL],
+  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, TR, FL, FL, FL, FL, FL, TR, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL, FL, FL, FL, FL, FL, WL],
+  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL, FL, FL, FL, FL, CO, WL],
   [WL, FL, WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL, HR, WL],
   [WL, FL, FL, WL, FL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL],
 ]
 
-export function changeCanvas(nextPosition, walker) {
+export function changeCanvas(nextPosition, walker, currentPosition) {
   const canvasValue = canvas[nextPosition.y][nextPosition.x]
+  const coinValue = canvas[currentPosition.y][currentPosition.x]
 
   let canvasValueDemon1
   let canvasValueDemon2
@@ -63,7 +64,7 @@ export function changeCanvas(nextPosition, walker) {
         canvasValue === EPixels.MD ||
         canvasValue === EPixels.HL ||
         canvasValue === EPixels.TR,
-      chest: canvasValue === EPixels.CO,
+      coin: canvasValue === EPixels.CO,
     }
   }
 
@@ -71,7 +72,7 @@ export function changeCanvas(nextPosition, walker) {
     return {
       valid: canvasValue === EPixels.FL || canvasValue === EPixels.HR,
       dead: canvasValue === EPixels.HR,
-      chest: false,
+      coin: false,
     }
   }
   function getDemonValidMoves(canvasValue) {
@@ -131,7 +132,14 @@ export function changeCanvas(nextPosition, walker) {
         canvasValueDemon1 === EPixels.HR ||
         canvasValueDemon2 === EPixels.HR ||
         canvasValueDemon3 === EPixels.HR,
-      chest: false,
+      coin: false,
+    }
+  }
+  function getCoinValidDeploy(canvasValue, coinValue) {
+    return {
+      valid: canvasValue === EPixels.FL,
+      dead: false,
+      coin: coinValue === EPixels.CO,
     }
   }
 
@@ -145,6 +153,10 @@ export function changeCanvas(nextPosition, walker) {
   }
   if (walker === EPixels.DM) {
     result = getDemonValidMoves(canvasValue)
+    return result
+  }
+  if (walker === EPixels.CO) {
+    result = getCoinValidDeploy(canvasValue, coinValue)
     return result
   }
   return result

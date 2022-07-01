@@ -1,3 +1,5 @@
+/* eslint-disable no-debugger */
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { createContext, useState } from 'react'
 
 import { canvas, changeCanvas } from '../config/canvas'
@@ -11,11 +13,12 @@ interface IProps {
 }
 
 function ContextCanvas(props: IProps) {
+  const [count, setCount] = useState(1)
   const [updatedCanvas, setCanvas2] = useState({
     canvas,
     setCanvas: (direction, move, walker) => {
       const nextPosition = handleMove(direction, move)
-      const isValidMoviment = changeCanvas(nextPosition, walker)
+      const isValidMoviment = changeCanvas(nextPosition, walker, move)
       if (isValidMoviment.valid && (walker === EPixels.MD || walker === EPixels.HR)) {
         setCanvas2((prevState) => {
           const newCanvas = [...prevState.canvas]
@@ -50,6 +53,21 @@ function ContextCanvas(props: IProps) {
           }
         })
       }
+
+      if (isValidMoviment.valid && walker === EPixels.CO) {
+        setCanvas2((prevState) => {
+          const newCanvas = [...prevState.canvas]
+
+          newCanvas[move.y][move.x] = EPixels.FL
+
+          newCanvas[nextPosition.y][nextPosition.x] = walker
+          return {
+            canvas: newCanvas,
+            setCanvas: prevState.setCanvas,
+          }
+        })
+      }
+
       return {
         nextPosition,
         isValidMoviment,
@@ -58,7 +76,7 @@ function ContextCanvas(props: IProps) {
   })
 
   return (
-    <CanvasContext.Provider value={updatedCanvas}>
+    <CanvasContext.Provider value={{ updatedCanvas, count, setCount }}>
       {props.children}
     </CanvasContext.Provider>
   )

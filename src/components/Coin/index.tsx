@@ -2,15 +2,18 @@
 import React from 'react'
 
 import { TILE_SIZE } from '../../config/configs'
+import useCoinDeploy from '../../config/useCoinDeploy'
 
-function Coin({ initialPosition }) {
+function Coin(initialPosition) {
+  const { move } = useCoinDeploy(initialPosition)
+
   return (
     <div
       className="coin"
       style={{
         position: 'absolute',
-        top: TILE_SIZE * initialPosition.y,
-        left: TILE_SIZE * initialPosition.x,
+        top: TILE_SIZE * move.y,
+        left: TILE_SIZE * move.x,
         width: TILE_SIZE,
         height: TILE_SIZE,
         // backgroundImage: 'url(./assets/images/coin.png)',

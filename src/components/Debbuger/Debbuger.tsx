@@ -23,7 +23,7 @@ function getCanvasMap(canvas) {
 function Debbuger() {
   const [debug, setDebug] = useState(false)
 
-  const updatedCanvas = useContext(CanvasContext)
+  const { updatedCanvas } = useContext(CanvasContext)
   const tiles = getCanvasMap(updatedCanvas.canvas)
 
   useEventListener('keydown', (event: KeyboardEvent) => {

@@ -13,6 +13,14 @@ function handleMove(direction, move) {
   if (direction === EWalker.DOWN) {
     return { x: move.x, y: move.y + 1 }
   }
+  if (direction === null) {
+    const random = Math.floor(Math.random() * 19)
+    const random2 = Math.floor(Math.random() * 19)
+    return { x: random, y: random2 }
+  }
+  if (direction === 'coin') {
+    return { count: 0 }
+  }
 
   return null
 }

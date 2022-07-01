@@ -6,7 +6,7 @@ import { EPixels, EWalker } from './configs'
 
 function useDemonMoviment({ initialPosition }) {
   const [move, setMove] = useState(initialPosition)
-  const updatedCanvas = useContext(CanvasContext)
+  const { updatedCanvas } = useContext(CanvasContext)
 
   function randomMove(walker) {
     const random = Math.floor(Math.random() * 3.99)
@@ -26,8 +26,8 @@ function useDemonMoviment({ initialPosition }) {
         setTimeout(() => {
           // eslint-disable-next-line no-alert
           alert('Morreu Otário')
-        })
-        window.location.reload()
+          window.location.reload()
+        }, 100)
       }
     }
 

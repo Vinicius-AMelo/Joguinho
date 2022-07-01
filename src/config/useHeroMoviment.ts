@@ -5,7 +5,7 @@ import { CanvasContext } from '../store/CanvasContext'
 import { EPixels } from './configs'
 
 function useHeroMoviment({ initialPosition }) {
-  const updatedCanvas = useContext(CanvasContext)
+  const { updatedCanvas, setCount } = useContext(CanvasContext)
 
   const [move, setMove] = useState(initialPosition)
 
@@ -19,8 +19,11 @@ function useHeroMoviment({ initialPosition }) {
       setTimeout(() => {
         // eslint-disable-next-line no-alert
         alert('Morreu Otário')
-      })
-      window.location.reload()
+        window.location.reload()
+      }, 100)
+    }
+    if (tora.isValidMoviment.coin) {
+      setCount(0)
     }
   })
 

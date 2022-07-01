@@ -22,7 +22,7 @@ function getCanvasMap() {
         const demon3 = canvas[y][x + 1]
         const demon4 = canvas[y + 1][x + 1]
 
-        const valid = {
+        const bigDemon = {
           valido:
             demon1 === EPixels.DM &&
             demon2 === EPixels.DM &&
@@ -30,12 +30,12 @@ function getCanvasMap() {
             demon4 === EPixels.DM,
         }
 
-        const key = `${x}-${y}`
+        const key = `${y}-${x}`
 
         if (content === EPixels.HR) {
           tilesArray.push(<Hero key={key} initialPosition={position} />)
         }
-        if (valid.valido) {
+        if (bigDemon.valido) {
           tilesArray.push(<Demon key={key} initialPosition={position} />)
         }
         if (content === EPixels.TR) {
@@ -54,8 +54,8 @@ function getCanvasMap() {
   return tilesArray
 }
 
-const tiles = getCanvasMap()
 function Level() {
+  const tiles = getCanvasMap()
   return (
     <div
       className="mapa"
