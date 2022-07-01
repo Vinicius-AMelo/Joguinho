@@ -16,6 +16,7 @@ function handleMove(direction, move) {
   if (direction === null) {
     const random = Math.floor(Math.random() * 19)
     const random2 = Math.floor(Math.random() * 19)
+    console.log(2)
     return { x: random, y: random2 }
   }
   if (direction === 'coin') {

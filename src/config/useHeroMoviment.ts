@@ -10,20 +10,22 @@ function useHeroMoviment({ initialPosition }) {
   const [move, setMove] = useState(initialPosition)
 
   useEventListener('keydown', (event: KeyboardEvent) => {
-    const tora = updatedCanvas.setCanvas(event.key, move, EPixels.HR)
+    if (event.key.includes('Arrow')) {
+      const tora = updatedCanvas.setCanvas(event.key, move, EPixels.HR)
 
-    if (tora.isValidMoviment.valid) {
-      setMove(tora.nextPosition)
-    }
-    if (tora.isValidMoviment.dead) {
-      setTimeout(() => {
-        // eslint-disable-next-line no-alert
-        alert('Morreu Otário')
-        window.location.reload()
-      }, 100)
-    }
-    if (tora.isValidMoviment.coin) {
-      setCount(0)
+      if (tora.isValidMoviment.valid) {
+        setMove(tora.nextPosition)
+      }
+      if (tora.isValidMoviment.dead) {
+        setTimeout(() => {
+          // eslint-disable-next-line no-alert
+          alert('Morreu Otário')
+          window.location.reload()
+        }, 100)
+      }
+      if (tora.isValidMoviment.coin) {
+        setCount(0)
+      }
     }
   })
 
