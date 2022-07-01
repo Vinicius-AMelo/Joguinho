@@ -8,7 +8,7 @@ function Demon(initialPosition) {
 
   return (
     <div
-      className="hero dm"
+      className="demon"
       style={{
         position: 'absolute',
         top: TILE_SIZE * move.y,
@@ -18,7 +18,7 @@ function Demon(initialPosition) {
         // backgroundImage: 'url(./assets/images/orc.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 -100px',
-        animation: 'diaboG 1s steps(4) infinite',
+        animation: 'fourSquare 1s steps(4) infinite',
       }}
     />
   )

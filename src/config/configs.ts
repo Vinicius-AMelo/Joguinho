@@ -17,7 +17,7 @@ export enum EPixels {
   TR = 2,
   MD = 3,
   DM = 4,
-  CH = 5,
+  CO = 5,
   HR = 6,
   HL = 7,
 }

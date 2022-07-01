@@ -16,22 +16,25 @@
   background-image: url('/public/assets/images/wizzard2.png');
 }
 
-.dm{
+.demon{
   background-image: url('/public/assets/images/orc.png');
 }
 
-.md{
+.mini-demon{
   background-image: url('/public/assets/images/mini-orc.png');
 }
 
 .trap{
   background-image: url('/public/assets/images/trap.png');
 }
-.joca{
-  background-image: url('/public/assets/images/CWB2.png');
+.corner-wall-bottom{
+  background-image: url('/public/assets/images/CWB.png');
+}
+.coin{
+  background-image: url('/public/assets/images/coin3.png');
 }
 
-@keyframes diabo {
+@keyframes oneSquare {
     from{
       background-position-x: 0px;
     }
@@ -40,21 +43,12 @@
     }
   }
 
-@keyframes diaboG {
+@keyframes fourSquare {
     from{
       background-position-x: 0px;
     }
     to{
       background-position-x: -384px;
-    }
-  }
-
-  @keyframes trap {
-    from{
-      background-position-x: 0px;
-    }
-    to{
-      background-position-x: -192px;
     }
   }
 

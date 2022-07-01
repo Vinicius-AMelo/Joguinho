@@ -16,7 +16,7 @@ function Trap({ initialPosition }) {
         // backgroundImage: 'url(./assets/images/trap.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 0',
-        animation: 'trap 1s steps(4) infinite',
+        animation: 'oneSquare 1s steps(4) infinite',
       }}
     />
   )

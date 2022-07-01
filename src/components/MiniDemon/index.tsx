@@ -8,7 +8,7 @@ function MiniDemon(initialPosition) {
 
   return (
     <div
-      className="hero md"
+      className="mini-demon"
       style={{
         position: 'absolute',
         top: TILE_SIZE * move.y,
@@ -18,7 +18,7 @@ function MiniDemon(initialPosition) {
         // backgroundImage: 'url(./assets/images/mini-orc.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 -50px',
-        animation: 'diabo 1s steps(4) infinite',
+        animation: 'oneSquare 1s steps(4) infinite',
       }}
     />
   )

@@ -1,6 +1,6 @@
 import { canvas } from '../../config/canvas'
 import { EPixels, GAME_SIZE } from '../../config/configs'
-import Chest from '../Chest'
+import Coin from '../Coin'
 import Debbuger from '../Debbuger/Debbuger'
 import Demon from '../Demon'
 import Hero from '../Hero'
@@ -44,8 +44,8 @@ function getCanvasMap() {
         if (content === EPixels.MD) {
           tilesArray.push(<MiniDemon key={key} initialPosition={position} />)
         }
-        if (content === EPixels.CH) {
-          tilesArray.push(<Chest key={key} initialPosition={position} />)
+        if (content === EPixels.CO) {
+          tilesArray.push(<Coin key={key} initialPosition={position} />)
         }
       }
     }

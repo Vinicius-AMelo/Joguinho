@@ -19,11 +19,11 @@ function Hero(initialPosition) {
           // backgroundImage: 'url(./assets/images/wizzard2.png)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '0 -36px',
-          animation: 'diabo 1s steps(4) infinite',
+          animation: 'oneSquare 1s steps(4) infinite',
         }}
       />
       <div
-        className="joca"
+        className="corner-wall-bottom"
         style={{
           position: 'absolute',
           width: GAME_SIZE,

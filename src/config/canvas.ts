@@ -5,7 +5,7 @@ const { FL } = EPixels
 const { TR } = EPixels
 const { MD } = EPixels
 const { DM } = EPixels
-const { CH } = EPixels
+const { CO } = EPixels
 const { HR } = EPixels
 const { HL } = EPixels
 
@@ -20,7 +20,7 @@ export const canvas = [
   [WL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, MD, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL],
+  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, CO, FL, FL, TR, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, TR, FL, FL, FL, FL, FL, TR, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, FL, WL],
@@ -56,14 +56,14 @@ export function changeCanvas(nextPosition, walker) {
         canvasValue === EPixels.FL ||
         canvasValue === EPixels.DM ||
         canvasValue === EPixels.MD ||
-        canvasValue === EPixels.CH ||
+        canvasValue === EPixels.CO ||
         canvasValue === EPixels.TR,
       dead:
         canvasValue === EPixels.DM ||
         canvasValue === EPixels.MD ||
         canvasValue === EPixels.HL ||
         canvasValue === EPixels.TR,
-      chest: canvasValue === EPixels.CH,
+      chest: canvasValue === EPixels.CO,
     }
   }
 

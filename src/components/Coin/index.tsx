@@ -3,21 +3,23 @@ import React from 'react'
 
 import { TILE_SIZE } from '../../config/configs'
 
-function Chest({ initialPosition }) {
+function Coin({ initialPosition }) {
   return (
     <div
-      className="hero"
+      className="coin"
       style={{
         position: 'absolute',
         top: TILE_SIZE * initialPosition.y,
-        left: TILE_SIZE * initialPosition.x + 2,
+        left: TILE_SIZE * initialPosition.x,
         width: TILE_SIZE,
         height: TILE_SIZE,
-        backgroundImage: 'url(./assets/images/chest.png)',
+        // backgroundImage: 'url(./assets/images/coin.png)',
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: '0 0',
+        animation: 'fourSquare .7s steps(8) infinite',
       }}
     />
   )
 }
 
-export default Chest
+export default Coin
