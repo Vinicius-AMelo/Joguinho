@@ -22,7 +22,9 @@ function Tile({ content, position }) {
       case 6:
         return 'magenta'
       case 7:
-        return 'yellow'
+        return 'greenyellow'
+      case 8:
+        return 'orange'
     }
     return null
   }
@@ -38,6 +40,7 @@ function Tile({ content, position }) {
         position: 'absolute',
         top: TILE_SIZE * position.y,
         left: TILE_SIZE * position.x,
+        zIndex: 2,
       }}
     >
       {content}

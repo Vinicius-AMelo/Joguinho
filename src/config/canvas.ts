@@ -8,6 +8,7 @@ const { DM } = EPixels
 const { CO } = EPixels
 const { HR } = EPixels
 const { HL } = EPixels
+const { CR } = EPixels
 
 export const canvas = [
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL],
@@ -15,19 +16,19 @@ export const canvas = [
   [WL, FL, FL, WL, FL, FL, FL, WL, FL, FL, FL, FL, FL, FL, WL, FL, FL, WL, WL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, TR, FL, WL, WL, FL, FL, FL, FL, MD, FL, FL, FL, HL, FL, FL, FL, FL, WL],
+  [WL, FL, TR, FL, CR, CR, FL, FL, FL, FL, MD, FL, FL, FL, HL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, MD, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL],
+  [WL, FL, FL, FL, FL, FL, FL, FL, FL, CO, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, TR, FL, FL, FL, FL, FL, TR, FL, FL, DM, DM, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
-  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, WL, FL, FL, FL, FL, CO, WL],
-  [WL, FL, WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL, HR, WL],
-  [WL, FL, FL, WL, FL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
+  [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, TR, FL, FL, FL, FL, FL, FL, FL, WL],
+  [WL, FL, CR, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL, HR, WL],
+  [WL, FL, FL, CR, FL, FL, FL, FL, FL, MD, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, FL, WL],
   [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL],
 ]

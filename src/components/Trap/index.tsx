@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React, { useState } from 'react'
 
 import { TILE_SIZE } from '../../config/configs'
 
 function Trap({ initialPosition }) {
+  const [state, setState] = useState(true)
+
+  setTimeout(() => {
+    setState(!state)
+  }, 499)
+
+  const play = state ? 'running' : 'paused'
   return (
     <div
       className="trap"
@@ -16,7 +23,8 @@ function Trap({ initialPosition }) {
         // backgroundImage: 'url(./assets/images/trap.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 0',
-        animation: 'oneSquare 1s steps(4) infinite',
+        animation: 'trap 1s steps(4) infinite',
+        animationPlayState: play,
       }}
     />
   )

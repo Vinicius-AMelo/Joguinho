@@ -1,6 +1,7 @@
 import { canvas } from '../../config/canvas'
 import { EPixels, GAME_SIZE } from '../../config/configs'
 import Coin from '../Coin'
+import Crate from '../Crate/Crate'
 import Debbuger from '../Debbuger/Debbuger'
 import Demon from '../Demon'
 import Hero from '../Hero'
@@ -46,6 +47,9 @@ function getCanvasMap() {
         }
         if (content === EPixels.CO) {
           tilesArray.push(<Coin key={key} initialPosition={position} />)
+        }
+        if (content === EPixels.CR) {
+          tilesArray.push(<Crate key={key} initialPosition={position} />)
         }
       }
     }

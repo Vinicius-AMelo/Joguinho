@@ -18,7 +18,7 @@ function Demon(initialPosition) {
         // backgroundImage: 'url(./assets/images/orc.png)',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 -100px',
-        animation: 'fourSquare 1s steps(4) infinite',
+        animation: 'fourSquare .5s steps(4) infinite',
       }}
     />
   )

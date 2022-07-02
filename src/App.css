@@ -9,7 +9,7 @@
   color: white;
 }
 .mapa{
-  background-image: url('/public/assets/images/level4.gif');
+  background-image: url('/public/assets/images/level1.gif');
 }
 
 .hero{
@@ -33,8 +33,20 @@
 .coin{
   background-image: url('/public/assets/images/coin3.png');
 }
+.crate{
+  background-image: url('/public/assets/images/crate.png');
+}
 
 @keyframes oneSquare {
+    from{
+      background-position-x: 0px;
+    }
+    to{
+      background-position-x: -192px;
+    }
+  }
+
+  @keyframes trap {
     from{
       background-position-x: 0px;
     }
