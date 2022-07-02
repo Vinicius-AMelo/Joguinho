@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Joguinho/static/css/main.df325c4f.css",
-    "main.js": "/Joguinho/static/js/main.837a88f3.js",
-    "static/media/level4.gif": "/Joguinho/static/media/level4.edc0231d768d036f4a2b.gif",
+    "main.css": "/Joguinho/static/css/main.1f424f3f.css",
+    "main.js": "/Joguinho/static/js/main.2fafee1f.js",
+    "static/media/level1.gif": "/Joguinho/static/media/level1.dc4ad279032aac3b4502.gif",
     "index.html": "/Joguinho/index.html",
-    "main.df325c4f.css.map": "/Joguinho/static/css/main.df325c4f.css.map",
-    "main.837a88f3.js.map": "/Joguinho/static/js/main.837a88f3.js.map"
+    "main.1f424f3f.css.map": "/Joguinho/static/css/main.1f424f3f.css.map",
+    "main.2fafee1f.js.map": "/Joguinho/static/js/main.2fafee1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.df325c4f.css",
-    "static/js/main.837a88f3.js"
+    "static/css/main.1f424f3f.css",
+    "static/js/main.2fafee1f.js"
   ]
 }
